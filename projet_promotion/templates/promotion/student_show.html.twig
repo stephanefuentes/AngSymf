@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Accuei
+{% endblock %}
+
+
+{% block body %}
+    <a href="{{ path('promotion') }}">Accueil</a>
+
+
+    <h1>{{ student.firstName }}
+        {{ student.lastName }}</h1>
+
+
+    <h3>liste des notes :</h3>
+    <ul>
+        {% for note in student.notes %}
+
+            <li>{{ note.notation | round(2) }}
+
+            </li>
+
+
+        {% endfor %}
+    </ul>
+{% endblock %}

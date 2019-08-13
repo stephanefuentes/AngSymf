@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    produit
+{% endblock %}
+
+{% block body %}
+
+<a href=" {{ path('categories')}} " >Accueil</a>
+    <h1>produit: {{ product.title }}</h1>
+    <h2>Description :</h2>
+    <p>{{ product.description }}</p>
+    <p><img src="{{ product.image }}" alt=""></p>
+
+    <h3>commentaires pour ce produit :</h3>
+    <ul>
+    {% for rating in product.ratings %}
+        <li><h4>{{rating.author}} :</h4>
+            <p>{{rating.content}}</p>
+            <p>Note : {{ rating.notation }}/ 10</p>
+        </li>
+        
+            
+        {% endfor %}
+    </ul>
+    {% endblock %}

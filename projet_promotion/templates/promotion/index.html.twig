@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Accuei
+{% endblock %}
+
+{% block body %}
+    <h1>Liste des promotions</h1>
+
+    <div class="row">
+
+
+        {% for promotion in promotions %}
+
+            <div class="col-4">
+
+                <div class="card border-info mb-3" style="max-width: 20rem;">
+                    <div class="card-header">
+                        <h3>{{ promotion.title }}</h3>
+                    </div>
+
+                    <div class="card-body">
+                        <h4 class="card-title">
+
+                            {{ promotion.students | length }}
+                            étudiants</h4>
+
+                        <p class="card-text">
+                            <a href="{{ path('promotion_show', {'slug': promotion.slug}) }}">Lire la suite ...</a>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+
+    {% endblock %}

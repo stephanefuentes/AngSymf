@@ -1,0 +1,19 @@
+{% block body %}
+    <h1>Categorie :
+        {{ category.title}}</h1>
+    {{dump(category)}}
+
+
+    <ul>
+        {% for freelance in category.freelances %}
+            <li>{{ freelance.firstName }}
+                {{ freelance.lastName}}
+                <a href="{{ path('freelance', {'slug': freelance.slug, 'category_slug': category.slug}) }}">Lire la suite ...</a>
+
+
+            </li>
+
+        {% endfor %}
+    </ul>
+
+{% endblock %}

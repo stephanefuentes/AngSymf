@@ -1,0 +1,8 @@
+{
+    "require": {
+        "symfony/validator": "^4.3",
+        "symfony/http-foundation": "^4.3",
+        "doctrine/annotations": "^1.6",
+        "doctrine/cache": "^1.8"
+    }
+}

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Accuei
+{% endblock %}
+
+{% block body %}
+    <h1>Liste des catégories freelance!</h1>
+
+    <ul>
+        {% for category in categories %}
+            <li>{{ category.title }}
+                ({{ category.freelances | length}}
+                freelance dans cette catégorie)<a href="{{ path('show_category', {'slug': category.slug}) }}">Lire la suite ...</a>
+
+            </li>
+
+        {% endfor %}
+    </ul>
+
+{% endblock %}
